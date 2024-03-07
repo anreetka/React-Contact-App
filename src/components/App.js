@@ -3,8 +3,7 @@ import Header from './Header';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 import React, {useState, useEffect} from "react";
-import { uuid } from "uuidv4";;
-
+import {v4 as uuid} from 'uuid';
 
 function App() {
   const LOCAL_STORAGE_KEY ="contacts";
@@ -33,11 +32,13 @@ function App() {
   }, [contacts]);
 
   return (
-    <div className="ui container">
+    <>
       <Header/>
+      <div className='ui container' style={{marginTop: '2%', marginLeft:'5%', marginRight:'2%', display:'flex', width:'100%'}}>
       <AddContact addContactHandler={addContactHandler} />
       <ContactList contacts={contacts} getContactId={removeContactHandler} />
     </div>
+    </>
   );
 }
 

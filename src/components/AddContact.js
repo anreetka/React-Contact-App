@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 class AddContact extends React.Component{
 
@@ -9,7 +9,7 @@ class AddContact extends React.Component{
 
     add = (e) =>{
         e.preventDefault();   //to prevent page from refreshing
-        if(this.state.name=="" || this.state.email==""){
+        if(this.state.name==="" || this.state.email===""){
             alert("All the field are mandatory");
             return;
         }
@@ -20,7 +20,7 @@ class AddContact extends React.Component{
 
     render(){
         return(
-            <div className="ui main">
+            <div className="ui main" style={{width: '50%', marginLeft: '10%', marginRight:'10%'}}>
                 <h2>Add Contact</h2>
 
                 <form className="ui form" onSubmit={this.add}>
